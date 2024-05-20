@@ -1,0 +1,24 @@
+<div class="range">
+  <div class="container">
+    <div class="range-wrapper">
+      <div class="video-stater">
+        <a id="anchor-54127F9F-CD3F-E697-9B29-F95602620A3D" class="simple-play-button fas fa-play" title="Play"
+          onclick="simpleAudioPlayer('player-54127F9F-CD3F-E697-9B29-F95602620A3D','anchor-54127F9F-CD3F-E697-9B29-F95602620A3D');">
+          <img src="../../assets/play-button-arrowhead.png" alt="">
+        </a>
+      </div>
+      <div class="video-player">
+        <img src="../../assets/130_168.jpg" alt="" />
+        <div class="content">
+          <h6>Stopped</h6>
+          <h5>Ambient Chill</h5>
+        </div>
+      </div>
+      <div class="range-container">
+        <input type="range" #rangeInput min="0" max="100" [(ngModel)]="rangeValue" (input)="updateLabel(rangeInput)">
+        <span #rangeLabel class="label">{{ rangeValue }}</span>
+        <audio #audioPlayer src="your-audio-file.mp3"></audio>
+      </div>
+    </div>
+  </div>
+</div>

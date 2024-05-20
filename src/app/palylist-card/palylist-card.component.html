@@ -1,0 +1,6 @@
+<a *ngFor="let item of data" class="playlist-block" [href]="item.url">
+  <span class="channel-fav channel-fav-off"></span>
+  <img class="channel-image" src="../assets/130_168.jpg" alt="">
+  <img class="channel-icon" src="../assets/23_136.png" alt="">
+  <span class="channel-name">{{item.name | slice: 1 : 10}}</span>
+</a>

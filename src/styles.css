@@ -1,1 +1,233 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2a2d34;
+  color: #ddd;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul li,
+ol li {
+  list-style-type: none;
+}
+
+.container-fluid {
+  padding-left: 57px;
+  padding-right: 57px;
+}
+
+.navbar {
+  background-color: #1f2126;
+}
+
+.navbar .navbar-brand img {
+  filter: invert(1);
+  width: 100%;
+  max-width: 111px;
+}
+
+.navbar ul li:not(:last-child) {
+  margin-right: 42px;
+}
+
+.navbar ul li .nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar ul li .nav-link::after,
+.navbar ul li .nav-link.active::after {
+  background-color: #f80;
+  content: "";
+  display: block;
+  left: 0;
+  height: 2px;
+  opacity: 0;
+  position: relative;
+  bottom: 0;
+  transition: all 0.15s;
+  width: 0;
+}
+
+.navbar ul li .nav-link:hover,
+.navbar ul li .nav-link.active {
+  color: #fff;
+}
+
+.navbar ul li .nav-link:hover::after,
+.navbar ul li .nav-link.active::after {
+  opacity: 1;
+  width: 100%;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  flex-grow: inherit;
+}
+
+.navbar .input-box {
+  position: relative;
+  width: 100%;
+  max-width: 45px;
+  margin-right: 42px;
+  height: 45px;
+  background-color: #100505;
+  border-radius: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+}
+
+.navbar .input-box.open {
+  max-width: 270px;
+}
+
+.navbar .input-box input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  background-color: transparent;
+  padding: 0 15px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar .input-box.open input {
+  padding: 0 15px 0 65px;
+  background-color: #070303;
+}
+
+.navbar .input-box .search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #070303;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+}
+
+.navbar .search .search-icon {
+  font-size: 15px;
+}
+
+.navbar .input-box .close-icon {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  font-size: 15px;
+  color: #1C1C1C;
+  padding: 5px;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.navbar .input-box.open .close-icon {
+  transform: translateY(-50%) rotate(180deg);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.playlist-block {
+  margin-top: 30px;
+}
+
+.playlist-block a {
+  position: relative;
+  display: inline-block;
+  margin: 14px;
+  transition: all 0.4s ease;
+}
+
+.playlist-block a:hover {
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.playlist-block a::before {
+  background: rgba(0, 0, 0, 0.25);
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.playlist-block a .channel-image {
+  width: 168px;
+  height: 168px;
+  object-fit: fill;
+}
+
+.playlist-block a .channel-fav {
+  color: #f66;
+  left: 14px;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0 0 2px #000;
+  top: 14px;
+  transition: all 0.2s ease;
+  z-index: 12;
+}
+
+.playlist-block a .channel-fav.channel-fav-off {
+  opacity: 0;
+  transition: opacity 0.4s ease, all 0.2s ease;
+}
+
+.playlist-block a .channel-fav::before {
+  content: url(assets/heart.png);
+}
+
+.playlist-block a .channel-name {
+  background: linear-gradient(transparent, #000);
+  bottom: 0;
+  color: #fff;
+  font-size: 15.3px;
+  left: 0;
+  right: 0;
+  line-height: 18.2px;
+  padding: 28px 14px 14px;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+}
+
+.playlist-block a .channel-icon {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 68px;
+  height: 68px;
+  transition: opacity 0.4s;
+  z-index: 2;
+}
